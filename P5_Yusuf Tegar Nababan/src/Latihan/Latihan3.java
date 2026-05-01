@@ -9,7 +9,6 @@ public class Latihan3 {
         String namaTamu;
         int nomorKamar = 204;
         
-        // Variabel pendukung disiapkan untuk menggantikan diskon/kredit/debit
         int lamaMenginap, biayaLayanan, totalTagihan; 
         
         System.out.print("Masukkan nama lengkap tamu untuk check-in: ");
