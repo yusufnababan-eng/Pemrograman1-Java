@@ -1,17 +1,24 @@
 package Latihan;
 
-
 import java.text.NumberFormat;
 import java.util.Locale;
+import java.util.Scanner;
 
 public class Latihan4 {
     public static void main (String [] args) {
-        double angka = 1500000.75;
+        Scanner inputSistem = new Scanner(System.in);
         
-        Locale indonesia = new Locale("in", "ID");
-        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(indonesia);
+        System.out.println("=== PENETAPAN LABEL HARGA BARANG ===");
+        System.out.print("Masukkan nominal harga: ");
+        double hargaInput = inputSistem.nextDouble();
         
-        System.out.println(" Format Rupiah : " + formatRupiah.format(angka));
+        Locale wilayahIndo = new Locale("id", "ID");
+        NumberFormat formatMataUang = NumberFormat.getCurrencyInstance(wilayahIndo);
         
+        System.out.println("------------------------------------");
+        System.out.println("Hasil Label : " + formatMataUang.format(hargaInput));
+        System.out.println("Keterangan  : Harga sudah termasuk PPN");
+        
+        inputSistem.close();
     }
 }
