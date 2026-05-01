@@ -3,18 +3,22 @@ package Latihan;
 public class Latihan3 {
     public static void main(String[] args) {
         
-        double makan = 35000;
-        double transport = 20000;
-        double belanja = 45000;
-        double diskonPersen = 10;
+        double biayaOli = 35000;
+        double biayaFilter = 20000;
+        double biayaJasa = 45000;
+        double promoMemberPersen = 10;
         
-        double total = makan + transport + belanja;
-        double diskon = (diskonPersen / 100) * total;
-        double totalbayar = total - diskon;
+        double estimasiAwal = biayaOli + biayaFilter + biayaJasa;
         
-        System.out.println("Total sebelum diskon = " + total);
-        System.out.println("Diskon = " + diskon);
-        System.out.println("Total Setelah diskon = " + totalbayar);
+        double potonganHarga = (promoMemberPersen / 100) * estimasiAwal;
+        
+        double biayaAkhir = estimasiAwal - potonganHarga;
+        
+        System.out.println("=== NOTA ESTIMASI SERVIS KENDARAAN ===");
+        System.out.println("Subtotal Biaya       : Rp " + estimasiAwal);
+        System.out.println("Potongan Member (10%): Rp " + potonganHarga);
+        System.out.println("--------------------------------------");
+        System.out.println("Total Bayar Konsumen : Rp " + biayaAkhir);
+        System.out.println("======================================");
     }
-    
 }
