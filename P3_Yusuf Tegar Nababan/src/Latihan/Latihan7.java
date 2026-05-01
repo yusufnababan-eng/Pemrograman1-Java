@@ -1,39 +1,33 @@
 package Latihan;
 
-import java.text.*;
-import java.util.*;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class Latihan7 {
     public static void main (String [] args) {
-        double angka = 83243463.342245;
-        double angkaPecahan = 0.902235643;
+        double nilaiPasar = 125000750.85;
+        double rasioPertumbuhan = 0.15752;
         
-        NumberFormat NumberFormatterUS = NumberFormat.getNumberInstance(Locale.US);
-        NumberFormat CurrFormatterUS = NumberFormat.getCurrencyInstance(Locale.US);  
-        NumberFormat PercentFormatterUS = NumberFormat.getPercentInstance(Locale.US);
+        NumberFormat fmtAngkaUK = NumberFormat.getNumberInstance(Locale.UK);
+        NumberFormat fmtMataUangUK = NumberFormat.getCurrencyInstance(Locale.UK);  
+        NumberFormat fmtPersenUK = NumberFormat.getPercentInstance(Locale.UK);
         
-        String NumberStrKOREA = NumberFormatterUS.format (angka);
-        String CurrStrKOREA = CurrFormatterUS.format (angka);
-        String PercentStrKOREA = PercentFormatterUS.format (angkaPecahan);
+        System.out.println("=== LAPORAN INVESTASI (WILAYAH: UNITED KINGDOM) ===");
+        System.out.println("Nilai Aset   : " + fmtAngkaUK.format(nilaiPasar));
+        System.out.println("Total Pound  : " + fmtMataUangUK.format(nilaiPasar));
+        System.out.println("Margin Profit: " + fmtPersenUK.format(rasioPertumbuhan));
         
-        System.out.println("double Angka = " + angka + "berformat number : " + NumberStrKOREA);
-        System.out.println("double Angka = " + angka + "berformat currency : " + CurrStrKOREA);
-        System.out.println("double Angka = " + angka + "berformat persen : " + PercentStrKOREA);
+        System.out.println("\n" + "=".repeat(45) + "\n");
         
-        System.out.println();
-        System.out.println();
+        NumberFormat fmtAngkaJAPAN = NumberFormat.getNumberInstance(Locale.JAPAN);
+        NumberFormat fmtMataUangJAPAN = NumberFormat.getCurrencyInstance(Locale.JAPAN);
+        NumberFormat fmtPersenJAPAN = NumberFormat.getPercentInstance(Locale.JAPAN);
         
-        NumberFormat NumberFormatterGERMANY = NumberFormat.getNumberInstance(Locale.GERMANY);
-        NumberFormat CurrFormatterGERMANY = NumberFormat.getCurrencyInstance(Locale.GERMANY);
-        NumberFormat PercentFormatterGERMANY = NumberFormat.getPercentInstance(Locale.GERMANY);
+        System.out.println("=== GLOBAL INVESTMENT REPORT (REGION: JAPAN) ===");
+        System.out.println("Market Value : " + fmtAngkaJAPAN.format(nilaiPasar));
+        System.out.println("Total Yen    : " + fmtMataUangJAPAN.format(nilaiPasar));
+        System.out.println("Growth Ratio : " + fmtPersenJAPAN.format(rasioPertumbuhan));
         
-        String NumberStrGERMANY = NumberFormatterGERMANY.format (angka);
-        String CurrStrGERMANY = CurrFormatterGERMANY.format (angka);
-        String PercentStrGERMANY = PercentFormatterGERMANY.format (angkaPecahan);
-        
-        System.out.println("double Angka = " + angka + "berformat number : " + NumberStrGERMANY);
-        System.out.println("double Angka = " + angka + "berformat currency : " + CurrStrGERMANY);
-        System.out.println("double Angka = " + angka + "berformat persen : " + PercentStrGERMANY);
-        
+        System.out.println("\nSistem Pelaporan Global Berhasil Dijalankan.");
     }
 }
