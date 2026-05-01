@@ -9,7 +9,7 @@ public class Latihan3 {
         
         nama = JOptionPane.showInputDialog("Masukkan Nama Anda : " );
         
-        String pesan =" Assalamualaikum " + nama + " !! " ;
+        String pesan =" Halloo " + nama + " !! " ;
         
         JOptionPane.showMessageDialog(null, pesan);
     }
