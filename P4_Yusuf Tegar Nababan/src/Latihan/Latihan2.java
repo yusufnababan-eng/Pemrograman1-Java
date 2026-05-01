@@ -4,30 +4,36 @@ import java.util.Scanner;
 
 public class Latihan2 {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner inputSistem = new Scanner(System.in);
         
-        double makan, transport, belanja, total;
-        double pMakan, pTransport, pBelanja;
+        double padi, jagung, kedelai, kapasitasTotal;
+        double persenPadi, persenJagung, persenKedelai;
         
-        System.out.print("Masukkan makan: ");
-        makan = input.nextDouble();
+        System.out.println("=== SISTEM MONITORING HASIL PANEN ===");
         
-        System.out.print("Masukkan transport: ");
-        transport = input.nextDouble();
+        System.out.print("Input hasil Padi (ton)    : ");
+        padi = inputSistem.nextDouble();
         
-        System.out.print("Masukkan belanja: ");
-        belanja = input.nextDouble();
+        System.out.print("Input hasil Jagung (ton)  : ");
+        jagung = inputSistem.nextDouble();
         
-        total = makan + transport + belanja;
+        System.out.print("Input hasil Kedelai (ton) : ");
+        kedelai = inputSistem.nextDouble();
         
-        pMakan = (makan / total) * 100;
-        pTransport = (transport / total) *100;
-        pBelanja = (belanja / total) * 100;
+        kapasitasTotal = padi + jagung + kedelai;
         
-        System.out.println("\nTotal = " + total);
-        System.out.println("Persentase Makan = " + pMakan + "%");
-        System.out.println("Persentase Transport = " + pTransport + "%");
-        System.out.println("Persentase Belanja = " + pBelanja + "%");
+        persenPadi = (padi / kapasitasTotal) * 100;
+        persenJagung = (jagung / kapasitasTotal) * 100;
+        persenKedelai = (kedelai / kapasitasTotal) * 100;
         
+        System.out.println("\n------------------------------------");
+        System.out.println("REKAPITULASI DISTRIBUSI GUDANG");
+        System.out.println("Total Produksi : " + kapasitasTotal + " Ton");
+        System.out.println("Kontribusi Padi    : " + persenPadi + " %");
+        System.out.println("Kontribusi Jagung  : " + persenJagung + " %");
+        System.out.println("Kontribusi Kedelai : " + persenKedelai + " %");
+        System.out.println("------------------------------------");
+        
+        inputSistem.close();
     }
 }
