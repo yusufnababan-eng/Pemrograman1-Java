@@ -1,19 +1,22 @@
 package Latihan;
 
-
 import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class Latihan5 {
     public static void main (String [] args) {
-        Scanner input = new Scanner(System.in);
-        double nilai;
+        Scanner keyboard = new Scanner(System.in);
+        double rasioProfit;
         
-        System.out.print("Masukkan Nilai Desimal : ");
-        nilai = input.nextDouble();
+        System.out.println("=== SISTEM ANALISIS PROFITABILITAS ===");
+        System.out.print("Masukkan rasio laba (contoh 0.25 untuk 25%): ");
+        rasioProfit = keyboard.nextDouble();
         
-        NumberFormat persen = NumberFormat.getPercentInstance();
+        NumberFormat formatPersentase = NumberFormat.getPercentInstance();
         
-        System.out.println("Nilai Persen : " + persen.format(nilai));
+        System.out.println("--------------------------------------");
+        System.out.println("Margin Keuntungan Bersih: " + formatPersentase.format(rasioProfit));
+        
+        keyboard.close();
     }
 }
